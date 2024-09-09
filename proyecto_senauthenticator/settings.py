@@ -62,6 +62,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #  Este middleware extrae el token jwt-access de las cookies en cada solicitud y lo coloca en la cabecera de autorización para que Django
+    'app_senauthenticator.middleware.JWTAuthFromCookieMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',

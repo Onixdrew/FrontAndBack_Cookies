@@ -310,10 +310,9 @@ def inicio_sesion(request):
 
 
 
-# ////////// fucion protegida
+# ////////// fucion protegida que recibe el token y lo valida
 
 @api_view(['GET'])
-# @authentication_classes([TokenAuthentication])
-@permission_classes([IsAuthenticated])  # Verifica si el usuario está autenticado
+@permission_classes([IsAuthenticated])  #Extrae y verifica el token enviado en la cabecera Authorization es valido.
 def validarToken(request):
     return Response({'message': 'Usuario autenticado correctamente'}, status=200)
